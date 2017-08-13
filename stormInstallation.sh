@@ -32,7 +32,7 @@ sudo cp $1/zookeeper/conf/zoo_sample.cfg  $1/zookeeper/conf/zoo.cfg
 echo "-------------------------------------------------"
 echo ">>> appending zookeeper path to profile variables"
 echo "-------------------------------------------------"
-echo "export ZOOKEEPER_PREFIX=$1/zookeeper
+sudo echo "export ZOOKEEPER_PREFIX=$1/zookeeper
       export PATH=$PATH:$ZOOKEEPER_PREFIX/bin" >> ~/.bashrc
 
 echo "saving configurations"
@@ -61,7 +61,7 @@ cd apache-storm-1.1.1/
 sudo mkdir $2/storm
 sudo mv * $2/storm
 
-echo "yaml storm.zookeeper.servers:
+sudo echo "yaml storm.zookeeper.servers:
  - "localhost"
  yaml storm.local.dir: "/var/storm"
  yaml nimbus.host: "graylog2"
@@ -70,7 +70,7 @@ echo "yaml storm.zookeeper.servers:
 
 
 #adding to user profile
-echo "export STORM_PREFIX=$2/storm
+sudo echo "export STORM_PREFIX=$2/storm
       export PATH=$PATH:$STORM_PREFIX/bin" >> ~/.bashrc
 
 #installing xterm for command sessions
