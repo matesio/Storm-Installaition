@@ -77,17 +77,17 @@ sudo echo "export STORM_PREFIX=$2/storm
 sudo apt-get install xterm
 
 echo ">>>starting main server node"
-xterm -e storm nimbus
+xterm -e storm nimbus &
 
 #starting storm supervisor
 echo ">>>starting supervisor"
-xterm -e storm supervisor
+xterm -e storm supervisor &
 
 #starting gui
 
 echo ">>>starting storm gui localhost:8080"
 
-xterm -e storm  ui
+xterm -e storm  ui &
 #end if 
 
 else
