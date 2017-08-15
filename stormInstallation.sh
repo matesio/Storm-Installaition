@@ -19,6 +19,10 @@ des=/home/$USER/Desktop
 cd $des
 echo "Directory changed to"
 pwd
+#checking if zookeeper is installed or not 
+if ! type "zkServer.sh" > /dev/null; then
+echo "Zookeeper requirement already satisfied"
+else
 zookeeper_link='http://www-eu.apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz'
 wget $zookeeper_link
 tar xzf zookeeper-3.4.10.tar.gz
@@ -46,7 +50,7 @@ zkServer.sh start
 echo "------------------------------------------------------------"
 echo "-------------zookeeper installed successfuly----------------"
 echo "------------------------------------------------------------"
-
+fi
 echo "------------------------------------------------------------"
 echo ">>>Storm installation"
 echo "------------------------------------------------------------"
